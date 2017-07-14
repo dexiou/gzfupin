@@ -1,6 +1,6 @@
 import config, os
 import random, string
-from flask import Flask, request, url_for, send_from_directory
+from flask import Flask, request, url_for, send_from_directory, render_template
 from werkzeug.utils import secure_filename
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
@@ -45,7 +45,7 @@ def uploaded_file(filename):
 
 
 # 响应根路由
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
@@ -60,9 +60,10 @@ def upload_file():
     return html
 
 
-@app.route('/index')
+@app.route('/')
 def index():
-    return send_from_directory('static','index.html')
+    # return send_from_directory('static','index.html')
+    return render_template('index.html', file_url=None)
 
 
 
