@@ -2,15 +2,54 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>扶贫数据核对</title>
     <link rel="stylesheet" type="text/css" href="/static/semantic.min.css" />
     <script type="text/javascript" src="/static/jquery-3.2.1.min.js" ></script>
     <script type="text/javascript" src="/static/semantic.min.js" ></script>
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data" action="/">
-         <input type="file" name="file">
-         <input type="submit" value="上传">
-    </form>
+<div class="ui divider"></div>
+<div class="ui horizontal header divider huge ">富民村镇银行精准扶贫数据核查</div>
+
+
+<div class="ui ordered steps">
+  <div class="active step">
+    <div class="content">
+      <div class="title">上传</div>
+      <div class="description">仅上传包括身份证号和姓名列的excel文件</div>
+    </div>
+  </div>
+  <div class="active step">
+    <div class="content">
+      <div class="title">等待</div>
+      <div class="description">耐心等待数据对比结果</div>
+    </div>
+  </div>
+  <div class="active step">
+    <div class="content">
+      <div class="title">下载</div>
+      <div class="description">将服务器端生成的对比结果下载回本地</div>
+    </div>
+  </div>
+</div>
+<form method="post" enctype="multipart/form-data" action="/">
+ <div class="ui huge form">
+     <div class="row">
+         <div class="column">
+            <table>
+            <tr>
+                <td width="120"><div class="ui right pointing red basic label huge">点这里</div></td>
+                <td width="640"><input type="file" name="file" class="ui huge secondary button" /></td>
+                <td with="100"><input type="submit" value="上传" class="ui huge secondary button" /></td>
+            </tr>
+            </table>
+         </div>
+     </div>
+ </div>
+     </form>
+    <div class="ui message big">
+    <p>贵州富民村镇银行管理部 &copy; 2017</p>
+  </div>
+
 </body>
 </html>
