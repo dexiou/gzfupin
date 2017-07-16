@@ -39,10 +39,13 @@
             <table>
             <tr>
                 <td width="120"><div class="ui right pointing red basic label huge">点这里</div></td>
-                <td width="640"><input id="file" type="file" name="file" class="ui huge secondary button" required="required"/></td>
+                <td width="640">
+                    <input id="file" type="file" name="file" class="ui huge secondary button" required="required"/>
+                    <input id="token" type="hidden" name="token" value="{{ token }}" />
+                </td>
                 <td width="100"><input id="sub" type="submit" value="上传" class="ui huge secondary button" onclick="check()"/></td>
                 {% if file_url %}
-                    <td width="80"><a href="{{ file_url }}" class="ui primary big button">下载</a></td>
+                    <td width="80"><a href="/download/{{ file_url }}" class="ui primary big button">下载</a></td>
                 {% endif %}
             </tr>
             </table>
